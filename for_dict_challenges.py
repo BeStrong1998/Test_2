@@ -170,4 +170,21 @@ is_male = {
     'Олег': True,
     'Миша': True,
 }
+for i in school:
+    woman = 0
+    men = 0
+    for j in i['students']:
+        if is_male.get(j['first_name']) == False:
+            woman = woman + 1
+        if is_male.get(j['first_name']) == True:
+            men = men + 1
+    if woman < men:
+        print('Больше всего мальчиков в классе', i['class'])
+    if woman > men:
+        print('Больше всего девочек в классе', i['class'])
+    if woman == men:
+        print('Девочек и мальчиков одинаковое кол-во', i['class'])
+
+
+
 
